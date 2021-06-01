@@ -18,7 +18,5 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
-# text-shadow-three
 
-# text-shadow-three
 
