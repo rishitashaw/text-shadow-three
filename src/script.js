@@ -14,7 +14,8 @@ const scene = new THREE.Scene();
 // scene.background = new THREE.CubeTextureLoader()
 //   .setPath("/cubemap/")
 //   .load(["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"]);
-
+const fog = new THREE.Fog("#101010", 3, 25);
+scene.fog = fog;
 /**
  * fonts
  */
@@ -76,12 +77,12 @@ const planeGeometry = new THREE.PlaneBufferGeometry(15, 15);
 // Materials
 
 const material = new THREE.MeshStandardMaterial();
-
+const planeMaterial = new THREE.MeshStandardMaterial({ color: "#101010" });
 // Mesh
 const sphere = new THREE.Mesh(sphereGeometry, material);
 const box = new THREE.Mesh(boxGeometry, material);
 const torus = new THREE.Mesh(torusGeometry, material);
-const plane = new THREE.Mesh(planeGeometry, material);
+const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 
 sphere.castShadow = true;
 box.castShadow = true;
@@ -219,6 +220,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.shadowMap.enabled = true;
+renderer.setClearColor("#000");
 
 /**
  * Animate
