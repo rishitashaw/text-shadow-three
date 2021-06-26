@@ -14,8 +14,8 @@ const scene = new THREE.Scene();
 // scene.background = new THREE.CubeTextureLoader()
 //   .setPath("/cubemap/")
 //   .load(["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"]);
-const fog = new THREE.Fog("#101010", 3, 25);
-scene.fog = fog;
+// const fog = new THREE.Fog("#101010", 3, 25);
+// scene.fog = fog;
 /**
  * fonts
  */
